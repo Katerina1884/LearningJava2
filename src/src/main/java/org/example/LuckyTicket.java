@@ -9,24 +9,24 @@ public class LuckyTicket {
         System.out.println("Введите номер билета");
         int numberTicket = scanner.nextInt();
 
-        calculation(numberTicket);
-    }
-
-    public static void calculation(int numeric) {
-       int number6 = numeric % 10;
-       int number5 = (numeric/10)%10;
-       int number4 = (numeric/100)%10;
-       int number3 = (numeric/1000)%10;
-       int number2 = (numeric/10000)%10;
-       int number1 = (numeric/100000)%10;
-       int result1 = number4 + number5 + number6;
-       int result2 = number1 + number2 + number3;
-        if (result1 == result2) {
+        if(calculation(numberTicket)) {
             System.out.println("YES");
         }
-        else {
+        else{
             System.out.println("NO");
         }
+    }
+
+    public static boolean calculation(int numberTicket) {
+       int number6 = numberTicket % 10;
+       int number5 = (numberTicket/10)%10;
+       int number4 = (numberTicket/100)%10;
+       int number3 = (numberTicket/1000)%10;
+       int number2 = (numberTicket/10000)%10;
+       int number1 = (numberTicket/100000)%10;
+       int result1 = number4 + number5 + number6;
+       int result2 = number1 + number2 + number3;
+       return result1 == result2;
     }
 }
 
